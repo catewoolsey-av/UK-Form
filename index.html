@@ -1108,7 +1108,7 @@
                 }
             }
             
-            if (!termsAgree || !termsAgree.checked || !fpoQualification || !fpoQualification.checked) {
+            if (!termsAgree?.checked || !marketingConsent?.checked) {
                 if (error) {
                     error.textContent = 'Please check all required acknowledgements.';
                     error.classList.add('show');
