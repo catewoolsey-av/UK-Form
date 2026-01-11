@@ -75,6 +75,32 @@
             margin-bottom: 10px;
         }
 
+        .disclaimer-footer {
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 11px;
+            line-height: 1.6;
+            color: #666;
+            text-align: left;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .disclaimer-footer p {
+            margin-bottom: 12px;
+            font-size: 11px;
+        }
+
+        .disclaimer-footer ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .disclaimer-footer li {
+            margin-bottom: 6px;
+            font-size: 11px;
+        }
+
         .step-indicator {
             display: flex;
             justify-content: space-between;
@@ -174,6 +200,31 @@
             color: #000;
             margin-bottom: 8px;
             font-size: 14px;
+        }
+
+        .step2-disclaimer {
+            background: #f9f9f9;
+            border-left: 4px solid #666;
+            padding: 20px;
+            margin: 30px 0;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .step2-disclaimer p {
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .step2-disclaimer ul {
+            margin-left: 20px;
+            margin-top: 8px;
+        }
+
+        .step2-disclaimer li {
+            margin-bottom: 6px;
+            font-size: 13px;
         }
 
         h2 {
@@ -471,7 +522,7 @@
         <!-- Introduction Page -->
         <div id="introPage" class="intro-section">
             <h2>Welcome</h2>
-            <p>We're excited for the chance to share with you potential Venture Capital investing opportunities. <br><b> This comes at no obligation to you. </b></p>
+            <p>We're excited for the chance to share with you potential Venture Capital opportunities. <br><b> This comes at no obligation to you. </b></p>
             <p>To confirm you are eligible to receive financial promotions, please take a moment to review and complete the information in these three steps:</p>
             <ol>
                 <li>Contact info</li>
@@ -479,6 +530,21 @@
                 <li>Submit</li>
             </ol>
             <button type="button" class="btn-primary btn-large" onclick="startProcess()">Start Process</button>
+            
+            <div class="disclaimer-footer">
+                <p>Alumni Ventures UK, LLP (FRN XXX) is an Appointed Representative of Khepri Advisers Limited (FRN 692447) which is authorised and regulated by the Financial Conduct Authority. Khepri Advisers Limited is registered in England and Wales, registered address 95 Chancery Lane, London, WC2A 1DT.</p>
+                
+                <p>Alumni Ventures UK, LLP is a private limited company registered in England and Wales with registration number OC458068. Its registered office is at Dns House, 382 Kenton Road, Harrow, Middlesex, United Kingdom, HA3 8DP.</p>
+                
+                <p>The content of the information in this platform has not been approved by an authorised person within the meaning of the Financial Services and Markets Act 2000. Reliance on the information within this platform for the purpose of engaging in investment activity may expose an individual to a significant risk of losing all of the property or other assets invested.</p>
+                
+                <p>Please note that:</p>
+                <ul>
+                    <li>You are not a client of Alumni Ventures UK, LLP;</li>
+                    <li>Alumni Ventures UK, LLP is not advising you on any transaction that arises from this promotion; and</li>
+                    <li>Alumni Ventures UK, LLP is not responsible to you for providing protections afforded to clients.</li>
+                </ul>
+            </div>
         </div>
 
         <!-- Step Indicator (hidden on intro page) -->
@@ -601,7 +667,7 @@
                     <div class="checkbox-option">
                         <input type="checkbox" id="marketingConsent" name="marketingConsent">
                         <label for="marketingConsent">
-                            I consent to Alumni Ventures using my Personal Data in direct marketing (as described in Alumni Ventures' <a href="#" style="color: #104866;">Privacy Notice</a>) to keep me posted on the latest investment opportunities, webinars and networking events. I understand I can opt out from direct marketing at a later stage.
+                            I consent to Alumni Ventures using my Personal Data in direct marketing (as described in Alumni Ventures' <a href="#" style="color: #104866;">Privacy Notice</a>) to keep me posted on the latest opportunities, webinars and networking events. I understand I can opt out from direct marketing at a later stage.
                         </label>
                     </div>
                 </div>
@@ -669,30 +735,37 @@
                     <div class="form-group">
                         <label><strong>In the last financial year, did you have:</strong></label>
                         
-                        <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="radio" id="hnwIncomeCheck" name="hnwCriteria" value="income">
-                                <label for="hnwIncomeCheck">
-                                    <strong>A) An annual income of £100,000 or more?</strong><br>
-                                    <span class="info-text">Income does NOT include any one-off pension withdrawals.</span>
-                                </label>
-                            </div>
-                            <div class="conditional-field" id="hnwIncomeField">
-                                <label for="hnwIncomeAmount">Please specify your income to the nearest £10,000 in the last financial year.</label>
-                                <input type="text" id="hnwIncomeAmount" name="hnwIncomeAmount" placeholder="£">
-                            </div>
-
-                            <div class="radio-option" style="margin-top: 20px;">
-                                <input type="radio" id="hnwAssetsCheck" name="hnwCriteria" value="assets">
-                                <label for="hnwAssetsCheck">
-                                    <strong>B) Net assets of £250,000 or more?</strong><br>
-                                    <span class="info-text">Net assets do NOT include: your home (primary residence), any loan secured on it or any equity released from it; your pension (or any pension withdrawals) or any rights under insurance contracts. Net assets are total assets minus any debts you owe.</span>
-                                </label>
-                            </div>
-                            <div class="conditional-field" id="hnwAssetsField">
-                                <label for="hnwAssetsAmount">Please specify your net assets to the nearest £100,000 in the last financial year.</label>
-                                <input type="text" id="hnwAssetsAmount" name="hnwAssetsAmount" placeholder="£">
-                            </div>
+                    
+                    <div class="radio-group">
+                        <div class="checkbox-option">
+                            <input type="checkbox" id="hnwIncomeCheck" name="hnwCriteria" value="income">
+                            <label for="hnwIncomeCheck">
+                                <strong>A) An annual income of £100,000 or more?</strong><br>
+                                <span class="info-text">Income does NOT include any one-off pension withdrawals.</span>
+                            </label>
+                        </div>
+                        <div class="conditional-field" id="hnwIncomeField">
+                            <label for="hnwIncomeAmount">Please specify your income to the nearest £10,000 in the last financial year.</label>
+                            <input type="text" id="hnwIncomeAmount" name="hnwIncomeAmount" placeholder="£">
+                        </div>
+                    
+                        <div class="checkbox-option" style="margin-top: 20px;">
+                            <input type="checkbox" id="hnwAssetsCheck" name="hnwCriteria" value="assets">
+                            <label for="hnwAssetsCheck">
+                                <strong>B) Net assets of £250,000 or more?</strong><br>
+                                <span class="info-text">Net assets do NOT include: your home (primary residence), any loan secured on it or any equity released from it; your pension (or any pension withdrawals) or any rights under insurance contracts. Net assets are total assets minus any debts you owe.</span>
+                            </label>
+                        </div>
+                        <div class="conditional-field" id="hnwAssetsField">
+                            <label for="hnwAssetsAmount">Please specify your net assets to the nearest £100,000 in the last financial year.</label>
+                            <input type="text" id="hnwAssetsAmount" name="hnwAssetsAmount" placeholder="£">
+                        </div>
+                    
+                        <div class="checkbox-option" style="margin-top: 20px;">
+                            <input type="checkbox" id="hnwNeitherCheck" name="hnwCriteria" value="neither">
+                            <label for="hnwNeitherCheck">
+                                <strong>C) Neither</strong>
+                            </label>
                         </div>
                     </div>
 
@@ -707,6 +780,7 @@
                         <p>I accept that I could lose all of the money I invest.</p>
                         <p>I confirm that I understand that Alumni Ventures is not acting for me and that I understand that it will not be responsible for providing me with the protections afforded to clients of the firm. I understand that it will not be advising me on the relevant transaction.</p>
                     </div>
+                </div>
                 </div>
 
                 <!-- SCSI Section -->
@@ -723,54 +797,92 @@
                         <label><strong>Have you:</strong></label>
                         
                         <div class="radio-group">
-                            <div class="radio-option">
-                                <input type="checkbox" id="scsiPECheck" name="scsiCriteria" value="pe">
-                                <label for="scsiPECheck">
-                                    <strong>A.</strong> Worked in a professional capacity in the private equity sector, or in the provision of finance for small and medium enterprises, in the last two years?
-                                </label>
-                            </div>
-                            <div class="conditional-field" id="scsiPEField">
-                                <label for="scsiPEOrg">If yes, what is/was the name of the business/organisation?</label>
-                                <input type="text" id="scsiPEOrg" name="scsiPEOrg">
-                            </div>
-
-                            <div class="radio-option" style="margin-top: 20px;">
-                                <input type="checkbox" id="scsiDirectorCheck" name="scsiCriteria" value="director">
-                                <label for="scsiDirectorCheck">
-                                    <strong>B.</strong> Been the director of a company with an annual turnover of at least £1 million, in the last two years?
-                                </label>
-                            </div>
-                            <div class="conditional-field" id="scsiDirectorField">
-                                <label for="scsiDirectorCompany">If yes, what is/was the name of the company, and its Companies House number (or international equivalent)?</label>
-                                <input type="text" id="scsiDirectorCompany" name="scsiDirectorCompany">
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 10px;"><strong>A.</strong> Worked in a professional capacity in the private equity sector, or in the provision of finance for small and medium enterprises, in the last two years?</p>
+                                <div style="display: flex; gap: 20px; margin-left: 20px;">
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiPEYes" name="scsiA" value="yes">
+                                        <label for="scsiPEYes">Yes</label>
+                                    </div>
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiPENo" name="scsiA" value="no">
+                                        <label for="scsiPENo">No</label>
+                                    </div>
+                                </div>
+                                <div class="conditional-field" id="scsiPEField">
+                                    <label for="scsiPEDescription">Please briefly describe:</label>
+                                    <textarea id="scsiPEDescription" name="scsiPEDescription" rows="3"></textarea>
+                                </div>
                             </div>
 
-                            <div class="radio-option" style="margin-top: 20px;">
-                                <input type="checkbox" id="scsiInvestCheck" name="scsiCriteria" value="invest">
-                                <label for="scsiInvestCheck">
-                                    <strong>C.</strong> Made two or more investments in an unlisted company, in the last two years?
-                                </label>
-                            </div>
-                            <div class="conditional-field" id="scsiInvestField">
-                                <label for="scsiInvestDetails">If yes, how many investments in unlisted companies have you made in the last two years?</label>
-                                <textarea id="scsiInvestDetails" name="scsiInvestDetails" rows="3"></textarea>
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 10px;"><strong>B.</strong> Been the director of a company with an annual turnover of at least £1 million, in the last two years?</p>
+                                <div style="display: flex; gap: 20px; margin-left: 20px;">
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiDirectorYes" name="scsiB" value="yes">
+                                        <label for="scsiDirectorYes">Yes</label>
+                                    </div>
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiDirectorNo" name="scsiB" value="no">
+                                        <label for="scsiDirectorNo">No</label>
+                                    </div>
+                                </div>
+                                <div class="conditional-field" id="scsiDirectorField">
+                                    <label for="scsiDirectorDescription">Please briefly describe:</label>
+                                    <textarea id="scsiDirectorDescription" name="scsiDirectorDescription" rows="3"></textarea>
+                                </div>
                             </div>
 
-                            <div class="radio-option" style="margin-top: 20px;">
-                                <input type="checkbox" id="scsiNetworkCheck" name="scsiCriteria" value="network">
-                                <label for="scsiNetworkCheck">
-                                    <strong>D.</strong> Been a member of a network or syndicate of business angels for more than six months, and are still a member?
-                                </label>
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 10px;"><strong>C.</strong> Made two or more investments in an unlisted company, in the last two years?</p>
+                                <div style="display: flex; gap: 20px; margin-left: 20px;">
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiInvestYes" name="scsiC" value="yes">
+                                        <label for="scsiInvestYes">Yes</label>
+                                    </div>
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiInvestNo" name="scsiC" value="no">
+                                        <label for="scsiInvestNo">No</label>
+                                    </div>
+                                </div>
+                                <div class="conditional-field" id="scsiInvestField">
+                                    <label for="scsiInvestDescription">Please briefly describe:</label>
+                                    <textarea id="scsiInvestDescription" name="scsiInvestDescription" rows="3"></textarea>
+                                </div>
                             </div>
-                            <div class="conditional-field" id="scsiNetworkField">
-                                <label for="scsiNetworkName">If yes, what is the name of the network or syndicate?</label>
-                                <input type="text" id="scsiNetworkName" name="scsiNetworkName">
+
+                            <div style="margin-bottom: 20px;">
+                                <p style="margin-bottom: 10px;"><strong>D.</strong> Been a member of a network or syndicate of business angels for more than six months, and are still a member?</p>
+                                <div style="display: flex; gap: 20px; margin-left: 20px;">
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiNetworkYes" name="scsiD" value="yes">
+                                        <label for="scsiNetworkYes">Yes</label>
+                                    </div>
+                                    <div class="checkbox-option" style="margin-bottom: 0;">
+                                        <input type="checkbox" id="scsiNetworkNo" name="scsiD" value="no">
+                                        <label for="scsiNetworkNo">No</label>
+                                    </div>
+                                </div>
+                                <div class="conditional-field" id="scsiNetworkField">
+                                    <label for="scsiNetworkDescription">Please briefly describe:</label>
+                                    <textarea id="scsiNetworkDescription" name="scsiNetworkDescription" rows="3"></textarea>
+                                </div>
+                            </div>
+
+                            <div style="margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; gap: 10px;">
+                                    <strong>E.</strong>
+                                    <input type="checkbox" id="scsiNoneCheck" name="scsiE" value="none" style="margin: 0;">
+                                    <label for="scsiNoneCheck" style="margin-bottom: 0;">
+                                        None are applicable.
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="disclaimer-box" style="margin-top: 30px;">
-                        <p>I declare that I have answered yes to <strong>at least one</strong> of the criteria above and wish to be classified as a self-certified sophisticated investor.</p>
+                        <p>I declare that I have answered yes to <strong>A and/or B and/or C and/or D</strong> and wish to be treated as a self-certified sophisticated investor.</p>
                         <p>I understand that this means:</p>
                         <ul>
                             <li>I can receive financial promotions where the contents may not comply with rules made by the Financial Conduct Authority (FCA);</li>
@@ -787,7 +899,7 @@
                     <h3 style="margin-top: 40px; padding-top: 40px; border-top: 2px solid #e0e0e0;">High Net Worth Company - Statement</h3>
                     
                     <div class="info-box">
-                        <p><strong>Article 49 Requirements:</strong> The entity must satisfy one of the following requirements to be classified as a "high net worth company, unincorporated associations etc."</p>
+                        <p><strong>Article 49 Requirements:</strong> If the intention is to invest via an entity, the entity must satisfy one of the following requirements to be classified as a "high net worth company, unincorporated associations etc."</p>
                     </div>
 
                     <div class="form-group">
@@ -841,6 +953,11 @@
                         <label for="companyRegistration">Company Number (Companies House or international equivalent)</label>
                         <input type="text" id="companyRegistration" name="companyRegistration" placeholder="Company number">
                     </div>
+
+                    <div style="font-size: 12px; color: #666; line-height: 1.6; margin-top: 20px; padding: 15px; background: #f9f9f9; border-radius: 4px;">
+                        <p style="margin-bottom: 8px;">* Called up share capital has the meaning given in the 1985 Act or in the 1986 Order.</p>
+                        <p style="margin-bottom: 0;">** Net assets has the meaning given by section 264 of the 1985 Act or the equivalent provision of the 1986 Order.</p>
+                    </div>
                 </div>
 
                 <!-- Investment Professional Section -->
@@ -861,12 +978,20 @@
                                     <strong>1)</strong> An authorised person.
                                 </label>
                             </div>
+                            <div class="conditional-field" id="investproAField">
+                                <label for="investproADescription">Please briefly describe:</label>
+                                <textarea id="investproADescription" name="investproADescription" rows="3"></textarea>
+                            </div>
 
                             <div class="checkbox-option" style="margin-top: 15px;">
                                 <input type="checkbox" id="investproB" name="investproCriteria" value="exempt">
                                 <label for="investproB">
                                     <strong>2)</strong> An exempt person where the communication relates to a controlled activity which is a regulated activity to which the person is exempt.
                                 </label>
+                            </div>
+                            <div class="conditional-field" id="investproBField">
+                                <label for="investproBDescription">Please briefly describe:</label>
+                                <textarea id="investproBDescription" name="investproBDescription" rows="3"></textarea>
                             </div>
 
                             <div class="checkbox-option" style="margin-top: 15px;">
@@ -879,6 +1004,10 @@
                                 <p style="margin-bottom: 8px;">a. Whose ordinary business activities involve them carrying on the controlled activity to which the communication relates for the purpose of a business carried on by them; or</p>
                                 <p style="margin-bottom: 0;">b. Who it is reasonable to expect will carry on such activity for the purpose of a business carried on by them.</p>
                             </div>
+                            <div class="conditional-field" id="investproCField">
+                                <label for="investproCDescription">Please briefly describe:</label>
+                                <textarea id="investproCDescription" name="investproCDescription" rows="3"></textarea>
+                            </div>
 
                             <div class="checkbox-option">
                                 <input type="checkbox" id="investproD" name="investproCriteria" value="government">
@@ -886,18 +1015,35 @@
                                     <strong>4)</strong> A government, local authority (whether in the UK or elsewhere) or an international organisation.
                                 </label>
                             </div>
+                            <div class="conditional-field" id="investproDField">
+                                <label for="investproDDescription">Please briefly describe:</label>
+                                <textarea id="investproDDescription" name="investproDDescription" rows="3"></textarea>
+                            </div>
 
                             <div class="checkbox-option" style="margin-top: 15px;">
                                 <input type="checkbox" id="investproE" name="investproCriteria" value="employee">
                                 <label for="investproE">
-                                    <strong>5)</strong> A person (“A”) who is a director, officer or employee of a person (“B”) falling within any of the subsections above where the communication is made to AR in that capacity, and where A’s responsibilities when acing in that capacity involve them in the carrying on by B of controlled activities.
+                                    <strong>5)</strong> A person ("A") who is a director, officer or employee of a person ("B") falling within any of the subsections above where the communication is made to AR in that capacity, and where A's responsibilities when acing in that capacity involve them in the carrying on by B of controlled activities.
                                 </label>
+                            </div>
+                            <div class="conditional-field" id="investproEField">
+                                <label for="investproEDescription">Please briefly describe:</label>
+                                <textarea id="investproEDescription" name="investproEDescription" rows="3"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="error-message" id="step2Error">Please select an investor category and complete all required fields.</div>
+
+                <div class="step2-disclaimer">
+                    <p><strong>Please note that:</strong></p>
+                    <ul>
+                        <li>You are not a client of Alumni Ventures UK, LLP;</li>
+                        <li>Alumni Ventures UK, LLP is not advising you on any transaction that arises from this promotion; and</li>
+                        <li>Alumni Ventures UK, LLP is not responsible to you for providing protections afforded to clients.</li>
+                    </ul>
+                </div>
 
                 <div class="button-group">
                     <button type="button" class="btn-secondary" onclick="prevStep(2)">Previous</button>
@@ -921,8 +1067,17 @@
                     <ol style="margin-left: 20px; margin-bottom: 20px;">
                         <li style="margin-bottom: 15px;"><strong>DocuSign Envelope:</strong> A DocuSign envelope will be sent to <strong><span id="previewEmail" style="color: #104866;">your email address</span></strong> containing your official Financial Promotion Order (FPO) qualification statement.</li>
                         <li style="margin-bottom: 15px;"><strong>Review and Sign:</strong> Please check your inbox and carefully review the statement. You must complete the electronic signature within 30 days to activate your qualification.</li>
-                        <li style="margin-bottom: 15px;"><strong>Access Granted:</strong> Once the document is signed, you will be able to receive financial promotions and access investment opportunities on the Alumni Ventures platform.</li>
+                        <li style="margin-bottom: 15px;"><strong>Access Granted:</strong> Once the document is signed, <strong>evidencing eligibility</strong>, you will be able to receive financial promotions and access investment opportunities on the Alumni Ventures platform.</li>
                     </ol>
+                </div>
+
+                <div class="step2-disclaimer" style="margin-top: 30px;">
+                    <p><strong>Please note that:</strong></p>
+                    <ul>
+                        <li>You are not a client of Alumni Ventures UK, LLP;</li>
+                        <li>Alumni Ventures UK, LLP is not advising you on any transaction that arises from this promotion; and</li>
+                        <li>Alumni Ventures UK, LLP is not responsible to you for providing protections afforded to clients.</li>
+                    </ul>
                 </div>
 
                 <p style="text-align: center; color: #666; font-size: 14px; margin-top: 30px;">
@@ -935,6 +1090,14 @@
                 </div>
             </div>
         </form>
+        
+        <!-- Disqualification Message (Hidden by default) -->
+        <div id="disqualificationMessage" style="display: none;">
+            <div class="success-container">
+                <h2>We're sorry</h2>
+                <p style="margin-top: 20px; font-size: 16px; color: #666;">Your answer did not qualify you to receive further information. Thank you for your interest.</p>
+            </div>
+        </div>
 
         <!-- Success Message (Hidden until submission) -->
         <div id="successMessage" style="display: none;">
@@ -957,7 +1120,7 @@
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         let currentStep = 0; // 0 = intro page, 1-3 = form steps
 
         function startProcess() {
@@ -997,48 +1160,82 @@
         }
 
         function setupConditionalFields() {
-            // HNWI conditional fields (now radio buttons)
-            const hnwIncomeRadio = document.getElementById('hnwIncomeCheck');
-            const hnwAssetsRadio = document.getElementById('hnwAssetsCheck');
+            // HNWI conditional fields (now checkboxes)
+            const hnwIncomeCheck = document.getElementById('hnwIncomeCheck');
+            const hnwAssetsCheck = document.getElementById('hnwAssetsCheck');
+            const hnwNeitherCheck = document.getElementById('hnwNeitherCheck');
             
-            if (hnwIncomeRadio) {
-                hnwIncomeRadio.addEventListener('change', function() {
+            if (hnwIncomeCheck) {
+                hnwIncomeCheck.addEventListener('change', function() {
                     const incomeField = document.getElementById('hnwIncomeField');
-                    const assetsField = document.getElementById('hnwAssetsField');
                     if (incomeField) {
-                        incomeField.classList.add('show');
+                        if (this.checked) {
+                            incomeField.classList.add('show');
+                        } else {
+                            incomeField.classList.remove('show');
+                        }
                     }
-                    if (assetsField) {
-                        assetsField.classList.remove('show');
+                    // Uncheck "Neither" if income is checked
+                    if (this.checked && hnwNeitherCheck) {
+                        hnwNeitherCheck.checked = false;
                     }
                 });
             }
             
-            if (hnwAssetsRadio) {
-                hnwAssetsRadio.addEventListener('change', function() {
-                    const incomeField = document.getElementById('hnwIncomeField');
+            if (hnwAssetsCheck) {
+                hnwAssetsCheck.addEventListener('change', function() {
                     const assetsField = document.getElementById('hnwAssetsField');
                     if (assetsField) {
-                        assetsField.classList.add('show');
+                        if (this.checked) {
+                            assetsField.classList.add('show');
+                        } else {
+                            assetsField.classList.remove('show');
+                        }
                     }
-                    if (incomeField) {
-                        incomeField.classList.remove('show');
+                    // Uncheck "Neither" if assets is checked
+                    if (this.checked && hnwNeitherCheck) {
+                        hnwNeitherCheck.checked = false;
+                    }
+                });
+            }
+        
+            if (hnwNeitherCheck) {
+                hnwNeitherCheck.addEventListener('change', function() {
+                    // If "Neither" is checked, uncheck A and B and hide their fields
+                    if (this.checked) {
+                        if (hnwIncomeCheck) {
+                            hnwIncomeCheck.checked = false;
+                            const incomeField = document.getElementById('hnwIncomeField');
+                            if (incomeField) incomeField.classList.remove('show');
+                        }
+                        if (hnwAssetsCheck) {
+                            hnwAssetsCheck.checked = false;
+                            const assetsField = document.getElementById('hnwAssetsField');
+                            if (assetsField) assetsField.classList.remove('show');
+                        }
                     }
                 });
             }
 
-            // SCSI conditional fields (now checkboxes)
-            const scsiPECheck = document.getElementById('scsiPECheck');
-            const scsiDirectorCheck = document.getElementById('scsiDirectorCheck');
-            const scsiInvestCheck = document.getElementById('scsiInvestCheck');
-            const scsiNetworkCheck = document.getElementById('scsiNetworkCheck');
+            // SCSI conditional fields (now Yes/No checkboxes)
+            const scsiPEYes = document.getElementById('scsiPEYes');
+            const scsiPENo = document.getElementById('scsiPENo');
+            const scsiDirectorYes = document.getElementById('scsiDirectorYes');
+            const scsiDirectorNo = document.getElementById('scsiDirectorNo');
+            const scsiInvestYes = document.getElementById('scsiInvestYes');
+            const scsiInvestNo = document.getElementById('scsiInvestNo');
+            const scsiNetworkYes = document.getElementById('scsiNetworkYes');
+            const scsiNetworkNo = document.getElementById('scsiNetworkNo');
+            const scsiNoneCheck = document.getElementById('scsiNoneCheck');
 
-            if (scsiPECheck) {
-                scsiPECheck.addEventListener('change', function() {
+            if (scsiPEYes) {
+                scsiPEYes.addEventListener('change', function() {
                     const field = document.getElementById('scsiPEField');
                     if (field) {
                         if (this.checked) {
                             field.classList.add('show');
+                            if (scsiPENo) scsiPENo.checked = false;
+                            if (scsiNoneCheck) scsiNoneCheck.checked = false;
                         } else {
                             field.classList.remove('show');
                         }
@@ -1046,12 +1243,24 @@
                 });
             }
 
-            if (scsiDirectorCheck) {
-                scsiDirectorCheck.addEventListener('change', function() {
+            if (scsiPENo) {
+                scsiPENo.addEventListener('change', function() {
+                    if (this.checked) {
+                        if (scsiPEYes) scsiPEYes.checked = false;
+                        const field = document.getElementById('scsiPEField');
+                        if (field) field.classList.remove('show');
+                    }
+                });
+            }
+
+            if (scsiDirectorYes) {
+                scsiDirectorYes.addEventListener('change', function() {
                     const field = document.getElementById('scsiDirectorField');
                     if (field) {
                         if (this.checked) {
                             field.classList.add('show');
+                            if (scsiDirectorNo) scsiDirectorNo.checked = false;
+                            if (scsiNoneCheck) scsiNoneCheck.checked = false;
                         } else {
                             field.classList.remove('show');
                         }
@@ -1059,9 +1268,104 @@
                 });
             }
 
-            if (scsiInvestCheck) {
-                scsiInvestCheck.addEventListener('change', function() {
+            if (scsiDirectorNo) {
+                scsiDirectorNo.addEventListener('change', function() {
+                    if (this.checked) {
+                        if (scsiDirectorYes) scsiDirectorYes.checked = false;
+                        const field = document.getElementById('scsiDirectorField');
+                        if (field) field.classList.remove('show');
+                    }
+                });
+            }
+
+            if (scsiInvestYes) {
+                scsiInvestYes.addEventListener('change', function() {
                     const field = document.getElementById('scsiInvestField');
+                    if (field) {
+                        if (this.checked) {
+                            field.classList.add('show');
+                            if (scsiInvestNo) scsiInvestNo.checked = false;
+                            if (scsiNoneCheck) scsiNoneCheck.checked = false;
+                        } else {
+                            field.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            if (scsiInvestNo) {
+                scsiInvestNo.addEventListener('change', function() {
+                    if (this.checked) {
+                        if (scsiInvestYes) scsiInvestYes.checked = false;
+                        const field = document.getElementById('scsiInvestField');
+                        if (field) field.classList.remove('show');
+                    }
+                });
+            }
+
+            if (scsiNetworkYes) {
+                scsiNetworkYes.addEventListener('change', function() {
+                    const field = document.getElementById('scsiNetworkField');
+                    if (field) {
+                        if (this.checked) {
+                            field.classList.add('show');
+                            if (scsiNetworkNo) scsiNetworkNo.checked = false;
+                            if (scsiNoneCheck) scsiNoneCheck.checked = false;
+                        } else {
+                            field.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            if (scsiNetworkNo) {
+                scsiNetworkNo.addEventListener('change', function() {
+                    if (this.checked) {
+                        if (scsiNetworkYes) scsiNetworkYes.checked = false;
+                        const field = document.getElementById('scsiNetworkField');
+                        if (field) field.classList.remove('show');
+                    }
+                });
+            }
+
+            if (scsiNoneCheck) {
+                scsiNoneCheck.addEventListener('change', function() {
+                    if (this.checked) {
+                        // Uncheck all Yes answers and hide fields
+                        if (scsiPEYes) {
+                            scsiPEYes.checked = false;
+                            const field = document.getElementById('scsiPEField');
+                            if (field) field.classList.remove('show');
+                        }
+                        if (scsiDirectorYes) {
+                            scsiDirectorYes.checked = false;
+                            const field = document.getElementById('scsiDirectorField');
+                            if (field) field.classList.remove('show');
+                        }
+                        if (scsiInvestYes) {
+                            scsiInvestYes.checked = false;
+                            const field = document.getElementById('scsiInvestField');
+                            if (field) field.classList.remove('show');
+                        }
+                        if (scsiNetworkYes) {
+                            scsiNetworkYes.checked = false;
+                            const field = document.getElementById('scsiNetworkField');
+                            if (field) field.classList.remove('show');
+                        }
+                    }
+                });
+            }
+            
+            // Investment Professional conditional fields
+            const investproA = document.getElementById('investproA');
+            const investproB = document.getElementById('investproB');
+            const investproC = document.getElementById('investproC');
+            const investproD = document.getElementById('investproD');
+            const investproE = document.getElementById('investproE');
+
+            if (investproA) {
+                investproA.addEventListener('change', function() {
+                    const field = document.getElementById('investproAField');
                     if (field) {
                         if (this.checked) {
                             field.classList.add('show');
@@ -1072,9 +1376,48 @@
                 });
             }
 
-            if (scsiNetworkCheck) {
-                scsiNetworkCheck.addEventListener('change', function() {
-                    const field = document.getElementById('scsiNetworkField');
+            if (investproB) {
+                investproB.addEventListener('change', function() {
+                    const field = document.getElementById('investproBField');
+                    if (field) {
+                        if (this.checked) {
+                            field.classList.add('show');
+                        } else {
+                            field.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            if (investproC) {
+                investproC.addEventListener('change', function() {
+                    const field = document.getElementById('investproCField');
+                    if (field) {
+                        if (this.checked) {
+                            field.classList.add('show');
+                        } else {
+                            field.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            if (investproD) {
+                investproD.addEventListener('change', function() {
+                    const field = document.getElementById('investproDField');
+                    if (field) {
+                        if (this.checked) {
+                            field.classList.add('show');
+                        } else {
+                            field.classList.remove('show');
+                        }
+                    }
+                });
+            }
+
+            if (investproE) {
+                investproE.addEventListener('change', function() {
+                    const field = document.getElementById('investproEField');
                     if (field) {
                         if (this.checked) {
                             field.classList.add('show');
@@ -1093,10 +1436,9 @@
             ];
             
             const termsAgree = document.getElementById('termsAgree');
-            const fpoQualification = document.getElementById('fpoQualification');
-            
             const error = document.getElementById('step1Error');
             
+            // Check all required fields are filled
             for (let fieldId of requiredFields) {
                 const field = document.getElementById(fieldId);
                 if (!field || !field.value.trim()) {
@@ -1108,7 +1450,58 @@
                 }
             }
             
-            if (!termsAgree?.checked || !marketingConsent?.checked) {
+            // Validate email format
+            const emailField = document.getElementById('emailAddress');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (emailField && !emailRegex.test(emailField.value.trim())) {
+                if (error) {
+                    error.textContent = 'Please enter a valid email address.';
+                    error.classList.add('show');
+                }
+                return false;
+            }
+            
+            // Validate phone number (only digits, spaces, dashes, and plus signs allowed)
+            const phoneField = document.getElementById('phoneNumber');
+            const phoneRegex = /^[\d\s\-+()]+$/;
+            if (phoneField && !phoneRegex.test(phoneField.value.trim())) {
+                if (error) {
+                    error.textContent = 'Please enter a valid phone number (numbers only).';
+                    error.classList.add('show');
+                }
+                return false;
+            }
+            
+            // Validate date of birth (must be at least 1 year old)
+            const dobField = document.getElementById('dateOfBirth');
+            if (dobField && dobField.value) {
+                const dob = new Date(dobField.value);
+                const today = new Date();
+                
+                // Check if date is not in the future
+                if (dob > today) {
+                    if (error) {
+                        error.textContent = 'Please enter a valid date of birth.';
+                        error.classList.add('show');
+                    }
+                    return false;
+                }
+                
+                // Check if person is at least 1 year old
+                const oneYearAgo = new Date();
+                oneYearAgo.setFullYear(today.getFullYear() - 1);
+                
+                if (dob > oneYearAgo) {
+                    if (error) {
+                        error.textContent = 'Please enter a valid date of birth.';
+                        error.classList.add('show');
+                    }
+                    return false;
+                }
+            }
+            
+            // Check terms agreement
+            if (!termsAgree?.checked) {
                 if (error) {
                     error.textContent = 'Please check all required acknowledgements.';
                     error.classList.add('show');
@@ -1134,88 +1527,144 @@
 
             // Validate based on category
             if (category.value === 'hnwi') {
-                const hnwCriteria = document.querySelector('input[name="hnwCriteria"]:checked');
+                const hnwCriteriaChecked = document.querySelectorAll('input[name="hnwCriteria"]:checked');
+                const hnwNeitherCheck = document.getElementById('hnwNeitherCheck');
                 
-                if (!hnwCriteria) {
+                if (hnwCriteriaChecked.length === 0) {
                     if (error) {
-                        error.textContent = 'Please select one of the HNWI criteria (A or B).';
+                        error.textContent = 'Please select at least one of the HNWI criteria.';
                         error.classList.add('show');
+                    }
+                    return false;
+                }
+                
+                // Check if "Neither" is selected
+                if (hnwNeitherCheck && hnwNeitherCheck.checked) {
+                    // Show disqualification message
+                    const form = document.getElementById('qualificationForm');
+                    const stepIndicator = document.getElementById('stepIndicator');
+                    const disqualificationMessage = document.getElementById('disqualificationMessage');
+                    
+                    if (form) form.style.display = 'none';
+                    if (stepIndicator) stepIndicator.style.display = 'none';
+                    if (disqualificationMessage) {
+                        disqualificationMessage.style.display = 'block';
+                        window.scrollTo(0, 0);
                     }
                     return false;
                 }
                 
                 // Validate conditional fields based on selection
-                if (hnwCriteria.value === 'income') {
-                    const incomeAmount = document.getElementById('hnwIncomeAmount');
-                    if (!incomeAmount || !incomeAmount.value.trim()) {
-                        if (error) {
-                            error.textContent = 'Please specify your income amount.';
-                            error.classList.add('show');
-                        }
-                        return false;
-                    }
-                } else if (hnwCriteria.value === 'assets') {
-                    const assetsAmount = document.getElementById('hnwAssetsAmount');
-                    if (!assetsAmount || !assetsAmount.value.trim()) {
-                        if (error) {
-                            error.textContent = 'Please specify your net assets amount.';
-                            error.classList.add('show');
-                        }
-                        return false;
-                    }
-                }
-            } else if (category.value === 'scsi') {
-                const scsiCriteriaChecked = document.querySelectorAll('input[name="scsiCriteria"]:checked');
-                
-                if (scsiCriteriaChecked.length === 0) {
-                    if (error) {
-                        error.textContent = 'Please select at least one of the SCSI criteria (A, B, C, or D).';
-                        error.classList.add('show');
-                    }
-                    return false;
-                }
-                
-                // Validate conditional fields based on what's checked
                 let allFieldsFilled = true;
-                scsiCriteriaChecked.forEach(checkbox => {
-                    if (checkbox.value === 'pe') {
-                        const peOrg = document.getElementById('scsiPEOrg');
-                        if (!peOrg || !peOrg.value.trim()) {
+                hnwCriteriaChecked.forEach(checkbox => {
+                    if (checkbox.value === 'income') {
+                        const incomeAmount = document.getElementById('hnwIncomeAmount');
+                        if (!incomeAmount || !incomeAmount.value.trim()) {
                             if (error) {
-                                error.textContent = 'Please specify the business/organisation name for criterion A.';
+                                error.textContent = 'Please specify your income amount.';
                                 error.classList.add('show');
                             }
                             allFieldsFilled = false;
                         }
-                    } else if (checkbox.value === 'director') {
-                        const directorCompany = document.getElementById('scsiDirectorCompany');
-                        if (!directorCompany || !directorCompany.value.trim()) {
+                    } else if (checkbox.value === 'assets') {
+                        const assetsAmount = document.getElementById('hnwAssetsAmount');
+                        if (!assetsAmount || !assetsAmount.value.trim()) {
                             if (error) {
-                                error.textContent = 'Please specify the company name for criterion B.';
-                                error.classList.add('show');
-                            }
-                            allFieldsFilled = false;
-                        }
-                    } else if (checkbox.value === 'invest') {
-                        const investDetails = document.getElementById('scsiInvestDetails');
-                        if (!investDetails || !investDetails.value.trim()) {
-                            if (error) {
-                                error.textContent = 'Please provide investment details for criterion C.';
-                                error.classList.add('show');
-                            }
-                            allFieldsFilled = false;
-                        }
-                    } else if (checkbox.value === 'network') {
-                        const networkName = document.getElementById('scsiNetworkName');
-                        if (!networkName || !networkName.value.trim()) {
-                            if (error) {
-                                error.textContent = 'Please specify the network/syndicate name for criterion D.';
+                                error.textContent = 'Please specify your net assets amount.';
                                 error.classList.add('show');
                             }
                             allFieldsFilled = false;
                         }
                     }
                 });
+                
+                if (!allFieldsFilled) {
+                    return false;
+                }
+            } else if (category.value === 'scsi') {
+                const scsiNoneCheck = document.getElementById('scsiNoneCheck');
+                
+                // Check if "None are applicable" is selected
+                if (scsiNoneCheck && scsiNoneCheck.checked) {
+                    // Show disqualification message
+                    const form = document.getElementById('qualificationForm');
+                    const stepIndicator = document.getElementById('stepIndicator');
+                    const disqualificationMessage = document.getElementById('disqualificationMessage');
+                    
+                    if (form) form.style.display = 'none';
+                    if (stepIndicator) stepIndicator.style.display = 'none';
+                    if (disqualificationMessage) {
+                        disqualificationMessage.style.display = 'block';
+                        window.scrollTo(0, 0);
+                    }
+                    return false;
+                }
+                
+                // Check if at least one "Yes" is selected
+                const scsiPEYes = document.getElementById('scsiPEYes');
+                const scsiDirectorYes = document.getElementById('scsiDirectorYes');
+                const scsiInvestYes = document.getElementById('scsiInvestYes');
+                const scsiNetworkYes = document.getElementById('scsiNetworkYes');
+                
+                const hasYes = (scsiPEYes && scsiPEYes.checked) || 
+                              (scsiDirectorYes && scsiDirectorYes.checked) || 
+                              (scsiInvestYes && scsiInvestYes.checked) || 
+                              (scsiNetworkYes && scsiNetworkYes.checked);
+                
+                if (!hasYes) {
+                    if (error) {
+                        error.textContent = 'Please answer "Yes" to at least one of the SCSI criteria (A, B, C, or D).';
+                        error.classList.add('show');
+                    }
+                    return false;
+                }
+                
+                // Validate conditional fields for each "Yes" answer
+                let allFieldsFilled = true;
+                
+                if (scsiPEYes && scsiPEYes.checked) {
+                    const desc = document.getElementById('scsiPEDescription');
+                    if (!desc || !desc.value.trim()) {
+                        if (error) {
+                            error.textContent = 'Please provide a description for criterion A.';
+                            error.classList.add('show');
+                        }
+                        allFieldsFilled = false;
+                    }
+                }
+                
+                if (scsiDirectorYes && scsiDirectorYes.checked) {
+                    const desc = document.getElementById('scsiDirectorDescription');
+                    if (!desc || !desc.value.trim()) {
+                        if (error) {
+                            error.textContent = 'Please provide a description for criterion B.';
+                            error.classList.add('show');
+                        }
+                        allFieldsFilled = false;
+                    }
+                }
+                
+                if (scsiInvestYes && scsiInvestYes.checked) {
+                    const desc = document.getElementById('scsiInvestDescription');
+                    if (!desc || !desc.value.trim()) {
+                        if (error) {
+                            error.textContent = 'Please provide a description for criterion C.';
+                            error.classList.add('show');
+                        }
+                        allFieldsFilled = false;
+                    }
+                }
+                
+                if (scsiNetworkYes && scsiNetworkYes.checked) {
+                    const desc = document.getElementById('scsiNetworkDescription');
+                    if (!desc || !desc.value.trim()) {
+                        if (error) {
+                            error.textContent = 'Please provide a description for criterion D.';
+                            error.classList.add('show');
+                        }
+                        allFieldsFilled = false;
+                    }
+                }
                 
                 if (!allFieldsFilled) {
                     return false;
@@ -1249,6 +1698,26 @@
                     }
                     return false;
                 }
+                
+                // Validate conditional fields based on what's checked
+                let allFieldsFilled = true;
+                criteriaChecks.forEach(checkbox => {
+                    const checkboxId = checkbox.id;
+                    const descriptionId = checkboxId + 'Description';
+                    const description = document.getElementById(descriptionId);
+                    
+                    if (!description || !description.value.trim()) {
+                        if (error) {
+                            error.textContent = 'Please provide a description for all selected criteria.';
+                            error.classList.add('show');
+                        }
+                        allFieldsFilled = false;
+                    }
+                });
+                
+                if (!allFieldsFilled) {
+                    return false;
+                }
             }
             
             if (error) error.classList.remove('show');
@@ -1261,15 +1730,10 @@
         }
 
         function handleSubmit() {
-            console.log('========================================');
-            console.log('handleSubmit called!');
-            
             if (validateStep3()) {
                 // Get email from step 1
                 const emailAddress = document.getElementById('emailAddress');
                 const confirmEmailElement = document.getElementById('confirmEmail');
-                console.log('Email element:', emailAddress);
-                console.log('Email value:', emailAddress ? emailAddress.value : 'NOT FOUND');
                 if (confirmEmailElement && emailAddress) {
                     confirmEmailElement.textContent = emailAddress.value;
                 }
@@ -1290,37 +1754,25 @@
                 console.log('FPO Qualification Data:', formData);
                 
                 // Hide form, show success
-                console.log('Hiding form and showing success message...');
                 const introPage = document.getElementById('introPage');
                 const form = document.getElementById('qualificationForm');
                 const stepIndicator = document.getElementById('stepIndicator');
                 const successMessage = document.getElementById('successMessage');
                 
                 if (introPage) {
-                    console.log('Hiding intro page');
                     introPage.style.display = 'none';
                 }
                 if (form) {
-                    console.log('Hiding form');
                     form.style.display = 'none';
                 }
                 if (stepIndicator) {
-                    console.log('Hiding step indicator');
                     stepIndicator.style.display = 'none';
                 }
                 
-                console.log('Success message element:', successMessage);
                 if (successMessage) {
-                    console.log('Showing success message');
                     successMessage.style.display = 'block';
-                    console.log('Success message displayed!');
                     window.scrollTo(0, 0);
-                } else {
-                    console.error('Success message element not found!');
                 }
-                console.log('========================================');
-            } else {
-                console.log('Step 3 validation failed');
             }
         }
 
@@ -1389,8 +1841,6 @@
 
         // Initialize when DOM is ready
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('DOM Content Loaded - Starting initialization');
-
             // Setup conditional field listeners
             setupConditionalFields();
             
